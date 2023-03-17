@@ -8,7 +8,22 @@ const mont = Montserrat({
 })
 
 const headerLinks = ["Listing" , "About us" , "Contact"]
-export default function Header(){
+
+
+export default function Header(props){
+    const{scrollToListing} = props;
+
+    const handleClick = (e) =>{
+        console.log(headerLinks.indexOf(event.target.innerText));
+        switch(headerLinks.indexOf(event.target.innerText)){
+            case 0 :{
+                scrollToListing();
+                break;
+            }
+            default :
+            console.log("error");
+        }
+    }
     return(
         <div className="header-container">
         <div className="header">
@@ -17,7 +32,7 @@ export default function Header(){
             </div>
             <div className="header-links">
             {headerLinks.map((headerLinks)=>{
-                return <h2 key={headerLinks} className={mont.className}>{headerLinks}</h2>
+                return <h2 key={headerLinks} className={mont.className} onClick={handleClick}>{headerLinks}</h2>
             })}
 
             </div>

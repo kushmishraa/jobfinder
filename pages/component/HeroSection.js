@@ -8,17 +8,21 @@ const mont = Montserrat({
 
 
 
-export default function HeroSection(){
+export default function HeroSection(props){
+
+    const {scrollToListing} = props;
+    
     const heroSectionHeadingRef = useRef();
     const blur = (e) =>{
         if(e._reactName == "onMouseEnter"){
             heroSectionHeadingRef.current.style.filter = 'blur(1px)'
         }
         else{
-            heroSectionHeadingRef.current.style.filter = 'blur(0px)'
+            heroSectionHeadingRef.current.style.filter = 'none'
         }
         
     }
+
     return(
         <>
         <div className="heroSection">
@@ -28,7 +32,7 @@ export default function HeroSection(){
                     <h2 className={mont.className}>Find a role that suits you !</h2>
                 </div>
                 <div className="hero-section-button-cont">
-                <button onMouseEnter={blur} onMouseLeave={blur} ><h2 className={mont.className}>view Listings</h2></button>
+                <button onMouseEnter={blur} onMouseLeave={blur} onClick={scrollToListing}><h2 className={mont.className}>view Listings</h2></button>
                 </div>
             </div>
         </div>
