@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import { Fade } from "react-reveal";
+
 const monst = Montserrat({
     subsets : [],
     weight: '300'
@@ -51,7 +51,7 @@ export default function ListingPage(){
             <div className="listing-card-component" ref={listingCardComponentRef}>
                 {listedJobs.map((jobObj)=>{
                     return(
-                    <Fade bottom>
+                  
                     <div className="listing-card" key={jobObj.id} onMouseEnter={handleHover} id = {jobObj.id}>
                     <div className="listing-card-r1">
                     <div className="listing-card-image">
@@ -73,7 +73,7 @@ export default function ListingPage(){
                     <button onClick={()=>{window.open(jobObj.link , "_self")}}><h2 className={monst.className}>Apply Now !</h2></button>
                     </div>
                 </div>
-                </Fade>
+             
                     )
                 })}
                 
