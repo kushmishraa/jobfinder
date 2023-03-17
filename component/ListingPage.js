@@ -39,9 +39,6 @@ const listedJobs = [
 
 export default function ListingPage(){
     const handleHover = (e) =>{
-        console.log(e);
-        console.log(e.target.parentElement.id);
-        console.log(listingCardComponentRef.current.children)
     }
     const listingCardComponentRef = useRef();
     

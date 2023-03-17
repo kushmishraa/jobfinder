@@ -7,6 +7,7 @@ import ListingPage from "@/component/ListingPage";
 import Script from "next/script";
 import Head from "next/head";
 import { useEffect } from "react";
+
 export default function Index(){
 
   const initialState = {}

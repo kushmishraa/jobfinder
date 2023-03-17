@@ -14,14 +14,11 @@ export default function Header(props){
     const{scrollToListing} = props;
 
     const handleClick = (e) =>{
-        console.log(headerLinks.indexOf(event.target.innerText));
         switch(headerLinks.indexOf(event.target.innerText)){
             case 0 :{
                 scrollToListing();
                 break;
             }
-            default :
-            console.log("error");
         }
     }
     return(
