@@ -162,3 +162,16 @@ justify-content: center;
   transition: 100ms;
   transform: scaleX(1);
 }
+.close-googleadsense{
+text-align: end;
+font-size: 50px;
+cursor: pointer;
+}
+.googleAdsense-script{
+  position: fixed;
+  z-index: 989;
+  background-color: whitesmoke;
+  top: 100px;
+  left: 250px;
+  width: 50%;
+}
