@@ -4,6 +4,7 @@ import Header from "@/component/Header";
 import { reducer } from "@/reducer/appReducer";
 import HeroSection from "@/component/HeroSection";
 import ListingPage from "@/component/ListingPage";
+import Head from "next/head";
 export default function Index(){
 
   const initialState = {}
@@ -16,7 +17,10 @@ export default function Index(){
   }
 
   return(
-    <div className="main-container"> 
+    
+    <div className="main-container">
+      <Head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3907583389552514"
+     crossOrigin="anonymous"></script></Head>
         <div className="main-header">
         <Header scrollToListing={scrollToListing} />
         </div>
