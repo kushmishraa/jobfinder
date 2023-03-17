@@ -1,12 +1,9 @@
 import React, { useRef } from "react";
-import Header from "./reducer/component/Header";
-import { reducer } from "./reducer/appReducer";
 import { useReducer } from "react";
-import HeroSection from "./reducer/component/HeroSection";
-import ListingPage from "./reducer/component/ListingPage";
-
-
-
+import Header from "@/component/Header";
+import { reducer } from "@/reducer/appReducer";
+import HeroSection from "@/component/HeroSection";
+import ListingPage from "@/component/ListingPage";
 export default function Index(){
 
   const initialState = {}
