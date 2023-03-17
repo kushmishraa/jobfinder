@@ -1,4 +1,4 @@
-export const reducer = (state , action) =>{
+export default reducer = (state , action) =>{
     switch(action){
         case "add" :
                 console.log("add");
