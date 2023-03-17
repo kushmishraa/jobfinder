@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Header from "./component/header";
+import Header from "./component/Header";
 import { reducer } from "./reducer/appReducer";
 import { useReducer } from "react";
 import HeroSection from "./component/HeroSection";

@@ -28,6 +28,10 @@
   display: flex;
 }
 
+.header-links h2{
+  cursor: pointer;
+}
+
 .heroSection{
   transition: 250ms;
 }
@@ -95,8 +99,11 @@ flex-wrap: wrap;
 flex:0 0 11px;
 justify-content: center;
 }
+
 .listing-card{
-  
+  transition: 250ms;
+  opacity: 0.7;
+  filter: blur(1px);
   box-shadow: 1px 1px 5px;
   flex : 0 0 350px;
   margin-left: 2%;
@@ -113,9 +120,12 @@ justify-content: center;
 
 .listing-card-info{
   padding:  20px;
+
 }
 
 .listing-card:hover{
+  opacity: 1;
+  filter: blur(0px);
   box-shadow: 1px 2px 8px ;
 }
 
