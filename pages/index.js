@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
-import Header from "./component/Header";
+import Header from "./reducer/component/Header";
 import { reducer } from "./reducer/appReducer";
 import { useReducer } from "react";
-import HeroSection from "./component/HeroSection";
-import ListingPage from "./component/ListingPage";
+import HeroSection from "./reducer/component/HeroSection";
+import ListingPage from "./reducer/component/ListingPage";
 
 
 
