@@ -7,7 +7,7 @@ const monst = Montserrat({
     weight: '300'
 })
 
-const listedJobs = [
+export const listedJobs = [
     {
         id:0,
         img : "https://c4.wallpaperflare.com/wallpaper/729/525/207/intel-logo-wallpaper-preview.jpg",
