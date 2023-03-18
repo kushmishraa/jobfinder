@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { createContext, useContext, useRef } from "react";
 import { useReducer } from "react";
 import Header from "@/component/Header";
 import { reducer } from "@/reducer/appReducer";
@@ -8,10 +8,18 @@ import Script from "next/script";
 import Head from "next/head";
 import { useEffect } from "react";
 
-export default function Index(){
 
-  const initialState = {}
-  const [state , dispatcher] = useReducer(reducer , initialState);
+export const listedJobsContext = createContext();
+export default function Index(){
+  
+  const initialState = {};
+
+  const [listedJobsState , dispatcher] = useReducer(reducer , initialState);
+
+  const listedjobobj = {
+    listedJobsState : listedJobsState,
+    dispatcherf : dispatcher
+  }
 
   const listingRef = useRef()
 
@@ -29,12 +37,12 @@ const adsenseRef = useRef();
     adsenseRef.current.style.display = 'none';
   }
   return(
-    
+    <listedJobsContext.Provider value={listedjobobj}>
     <div className="main-container">
-
         <div className="main-header">
         <Header scrollToListing={scrollToListing} />
         </div>
+      
       <div className="googleAdsense-script" ref={adsenseRef}>
       <h2 className="close-googleadsense" onClick={handleAdClose}>x</h2>
       <Head>
@@ -53,12 +61,16 @@ const adsenseRef = useRef();
      data-full-width-responsive="true"></ins>
      </div>
       </div>
+
         <div className="main-heroSection">
         <HeroSection scrollToListing={scrollToListing}/>
         </div>
+
         <div className="main-listing-Section" ref={listingRef}>
           <ListingPage />
         </div>
+
     </div>
+     </listedJobsContext.Provider>
   )
 }

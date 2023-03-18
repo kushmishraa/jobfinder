@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import { getData } from "@/api/s3bucketGetPut";
+import ListingComponent from "./ListingComponent";
 
 const monst = Montserrat({
     subsets : [],
@@ -10,7 +11,7 @@ const monst = Montserrat({
 
 
 export default function ListingPage(){
-    const [listedJobsObj , setListedJobs] = useState()
+    const [listedJobsObj , setListedJobs] = useState();
     useEffect(()=>{
         getData(setListedJobs);
     },[]);
@@ -22,31 +23,7 @@ export default function ListingPage(){
             </div>
             <div className="listing-card-component" >
                 {listedJobsObj ? listedJobsObj.listedJobs.map((jobObj)=>{
-                    return(
-                  
-                    <div className="listing-card" key={jobObj.id}  id = {jobObj.id}>
-                    <div className="listing-card-r1">
-                    <div className="listing-card-image">
-                        <Image 
-                         src = {jobObj.img}
-                         width={1000}
-                         height={0}
-                         alt={"logo"}
-                        />
-                    </div>
-                    <div className="listing-card-info">
-                    <h2 className={monst.className}>{jobObj.position}</h2>
-                    <h2 className={monst.className}>Location : {jobObj.location}</h2>
-                    <h2 className={monst.className}>Salary : {jobObj.salary}</h2>
-                    <h2 className={monst.className}>Experince Required : {jobObj.experience} years</h2>
-                    </div>  
-                    </div>
-                    <div className="listing-card-button">
-                    <button onClick={()=>{window.open(jobObj.link , "_self")}}><h2 className={monst.className}>Apply Now !</h2></button>
-                    </div>
-                </div>
-             
-                    )
+                    return(< ListingComponent jobObj = {jobObj} />)
                 }) : <h2>Loading</h2>}
                 
             </div>

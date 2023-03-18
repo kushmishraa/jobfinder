@@ -148,17 +148,17 @@ justify-content: center;
   font-size: 10px;
 }
 
-.listing-card-button::before{
+.listing-card-button button::before{
   content: "";
   background-color: black;
   display: flex;
   position: relative;
   height: 2px;
-  top: 50px;
+  top: 35px;
   transform: scaleX(0);
   transition: 100ms;
 }
-.listing-card-button:hover:before {
+.listing-card-button button:hover:before {
   transition: 100ms;
   transform: scaleX(1);
 }
@@ -174,4 +174,42 @@ cursor: pointer;
   top: 100px;
   left: 250px;
   width: 50%;
+}
+
+
+.admin-container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-login-form{
+
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-login-form input{
+  padding: 10px;
+}
+
+.admin-login-form button{
+  width: 100%;
+  padding: 10px;
+}
+
+.admin-dashboard-currlisting{
+  display: flex;
+  justify-content: center;
+}
+.admin-dashboard-button{
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.admin-dashboard-button button{
+  width: 100%;
 }
