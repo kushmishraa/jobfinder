@@ -19,7 +19,7 @@ export default function AdminDashboard(props){
           <div className="admin-dashboard-currlisting">
                 {Object.keys(listedjobobjContext.listedjobobj).length > 0 ? listedjobobjContext.listedjobobj.listedJobs.map((jobObj)=>{
                     return(
-                    <ListingComponent jobObj = {jobObj} isLoggin={isLoggin}/>
+                    <ListingComponent jobObj = {jobObj} isLoggin={isLoggin} key={jobObj.id}/>
                     )
                 }) : 
                 <Audio
