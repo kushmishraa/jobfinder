@@ -9,7 +9,7 @@ export async function putData(listedJobs){
 //          body : {listedJobs}
 //      };
 //    await fetch('https://vo4kyruihh.execute-api.eu-north-1.amazonaws.com/dev/directjobfinder/listing.json' , settings)
-    await axios.put('http://vo4kyruihh.execute-api.eu-north-1.amazonaws.com/dev/directjobfinder/listing.json' , {listedJobs})
+    await axios.put('https://vo4kyruihh.execute-api.eu-north-1.amazonaws.com/dev/directjobfinder/listing.json' , {listedJobs})
 }
 
 export async function getData(setListedJobs , dispatcher , initialState , action){
