@@ -12,7 +12,7 @@ export default function AdminDashboard(props){
     
     useEffect(()=>{
         getData(null,listedjobobjContext.dispatcher , listedjobobjContext.listedjobobj , "setData");
-    },[])
+    })
 
     return(
         <div className="admin-dashboard-container">
