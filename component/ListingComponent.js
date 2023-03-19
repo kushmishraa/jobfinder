@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import { adminContext } from "@/pages/admin";
 import { putData } from "@/api/s3bucketGetPut";
+import { adminContext } from "@/pages/admin/AdminLogin";
 const monst = Montserrat({
     subsets : [],
     weight: '300'
@@ -10,9 +10,9 @@ const monst = Montserrat({
 
 export default function ListingComponent(props){
 
-    const context = useContext(adminContext);
-    
     const {jobObj , isLoggin} = props;
+    const context = useContext(adminContext)
+    
 
     const deleteEntry = (id) => {
         let currListing = context.listedjobobj;

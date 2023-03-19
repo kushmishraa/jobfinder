@@ -38,7 +38,6 @@ export default function AdminLogin(){
 
     return(
         <adminContext.Provider value={listedObjReducer}>
-
         <div className="admin-container">
             {!isLoggin ?
             <div className="admin-login-form">
