@@ -17,14 +17,14 @@ export default function ListingComponent(props){
     const deleteEntry = (id) => {
         let currListing = context.listedjobobj;
         let eleIndex
-        for(let i=0 ; i<currListing.listedJobs.length ; i++){
-            if(currListing.listedJobs[i].id == id){
+        for(let i=0 ; i<currListing.data.length ; i++){
+            if(currListing.data[i].id == id){
                 eleIndex = i;
                 break
             }
         }
-        currListing.listedJobs.splice(eleIndex , 1);
-        putData(currListing);
+        currListing.data.splice(eleIndex , 1);
+        putData(currListing , context.dispatcher);
     }
     return(
         

@@ -22,7 +22,7 @@ export default function ListingPage(){
                 <h1 className={monst.className}>Listing Page</h1>
             </div>
             <div className="listing-card-component" >
-                {listedJobsObj ? listedJobsObj.listedJobs.map((jobObj)=>{
+                {listedJobsObj ? listedJobsObj.data.map((jobObj)=>{
                     return(< ListingComponent jobObj = {jobObj} />)
                 }) : <h2>Loading</h2>}
                 

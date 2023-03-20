@@ -15,8 +15,8 @@ export default function AdminDashboard(props){
     },[isLoggin])
     
     const fincNoOfListing = (listedjobobjContext) => {
-        if(listedjobobjContext && listedjobobjContext.listedjobobj.listedJobs){
-            return listedjobobjContext.listedjobobj.listedJobs.length
+        if(listedjobobjContext && listedjobobjContext.listedjobobj.data){
+            return listedjobobjContext.listedjobobj.data.length
         }
     }
 
@@ -24,7 +24,7 @@ export default function AdminDashboard(props){
         <div className="admin-dashboard-container">
           <div className="admin-dashboard-currlisting">
                 { fincNoOfListing(listedjobobjContext) > 0 ? 
-                listedjobobjContext.listedjobobj.listedJobs.map((jobObj)=>{
+                listedjobobjContext.listedjobobj.data.map((jobObj)=>{
                     return(
                     <ListingComponent jobObj = {jobObj} isLoggin={isLoggin} key={jobObj.id}/>
                     )

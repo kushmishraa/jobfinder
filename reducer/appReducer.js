@@ -7,6 +7,8 @@ export const reducer = (state , action) =>{
             break;
         case "setData" :
             return action.data;
+        case "increase-put-call" :
+            return {...state , putcall:1}
         default :
             break;
         }
