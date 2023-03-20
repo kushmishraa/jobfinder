@@ -1,9 +1,20 @@
-{
-    "version": "1.0",
-    "rules" : [
-        {
-            "allowedOrigins" : ["*"],
-            "allowedMethods" : ["GET" , "PUT"]
-        }
-    ]
-}
+[
+    {
+        "AllowedHeaders": [
+            "Origin",
+            "Content-Type",
+            "Action"
+        ],
+        "AllowedMethods": [
+            "GET",
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": [],
+        "preFlight":[
+           {"AllowedMethods": ["OPTIONS"]} 
+          ]
+    }
+]

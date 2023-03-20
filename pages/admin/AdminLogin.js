@@ -1,3 +1,4 @@
+import { postUrl } from "@/api/s3bucketGetPut";
 import { reducer } from "@/reducer/appReducer";
 import React, { createContext, useContext, useReducer, useRef, useState } from "react";
 import AdminDashboard from "./adminDashboard/AdminDashborad";
@@ -7,7 +8,7 @@ export const adminContext = createContext();
 export default function AdminLogin(){
 
     async function adminValidation(){
-        const response = await fetch('https://vo4kyruihh.execute-api.eu-north-1.amazonaws.com/dev/directjobfinder/admin.json');
+        const response = await fetch('https://stg-upload.musafir.com/dev/directjobfinder/admin.json');
         const data = await response.json();
         if(data.loginData.username == username.current.value && data.loginData.pass == password.current.value){
             console.log("sucess");
