@@ -18,7 +18,7 @@ export async function getData(setListedJobs , dispatcher , initialState , action
     // const newData = JSON.parse(data)
     let bodyjson = "body-json"
     if(!setListedJobs){
-        dispatcher({action : action , data : data});
+        dispatcher({action : action , data : data[bodyjson]});
     }else{
         if(data[bodyjson]){
             setListedJobs(data[bodyjson])
