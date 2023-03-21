@@ -24,7 +24,7 @@ export default function ListingComponent(props){
             }
         }
         currListing.data.splice(eleIndex , 1);
-        putData(currListing , context.dispatcher);
+        putData(currListing , context.dispatcher , "putCall");
     }
     return(
         

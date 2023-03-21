@@ -11,7 +11,7 @@ const headerLinks = ["Listing" , "About us" , "Contact"]
 
 
 export default function Header(props){
-    const{scrollToListing} = props;
+    const{scrollToListing , isAdmin , addListing , home} = props;
 
     const handleClick = (e) =>{
         switch(headerLinks.indexOf(event.target.innerText)){
@@ -28,10 +28,14 @@ export default function Header(props){
                 <h1 className={mont.className}>JOBFINDER</h1>
             </div>
             <div className="header-links">
-            {headerLinks.map((headerLinks)=>{
+                {isAdmin ? 
+                <>
+                <h2 className={mont.className} onClick={handleClick}>{addListing}</h2>
+                <h2 className={mont.className} onClick={handleClick}>{home}</h2>
+                </>:
+            headerLinks.map((headerLinks)=>{
                 return <h2 key={headerLinks} className={mont.className} onClick={handleClick}>{headerLinks}</h2>
             })}
-
             </div>
         </div>
     </div>
