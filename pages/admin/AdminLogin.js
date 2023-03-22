@@ -1,26 +1,35 @@
-import { postUrl } from "@/api/s3bucketGetPut";
 import { reducer } from "@/reducer/appReducer";
-import React, { createContext, useContext, useReducer, useRef, useState } from "react";
+import React, { createContext, use, useContext, useReducer, useRef, useState } from "react";
 import AdminDashboard from "./adminDashboard/AdminDashborad";
-
+import { Montserrat } from "next/font/google";
+import Spinner from "@/component/Spinner";
+const monst = Montserrat({
+    variable : "monst",
+    subsets:[],
+})
 export const adminContext = createContext();
 
 export default function AdminLogin(){
 
+    const [error,setError] = useState();
+    const [spinner,showSpinner] = useState(false)
+
     async function adminValidation(){
+        
         const response = await fetch('https://vo4kyruihh.execute-api.eu-north-1.amazonaws.com/dev/directjobfinder/admin.json');
         const data = await response.json();
         if(data.loginData.username == username.current.value && data.loginData.pass == password.current.value){
-            console.log("sucess");
             setLoggin(true);
         }
         else{
             setLoggin(false);
-            console.log("failed");
+            showSpinner(false);
+            setError("UserName or Password is incorrect");
         }
     }
 
     const handleLogin = () =>{
+        showSpinner(true);
         adminValidation();
     }
 
@@ -36,15 +45,17 @@ export default function AdminLogin(){
     const password = useRef();
 
     const [isLoggin , setLoggin] = useState(false);
-
     return(
         <adminContext.Provider value={listedObjReducer}>
         <div className="admin-container">
             {!isLoggin ?
             <div className="admin-login-form">
-            <input type={"text"} placeholder="User Name" ref={username}/>
-            <input type={"password"} placeholder="Password" ref={password}></input>
-            <button onClick={handleLogin}>login</button>
+            <div className="admin-login-input">
+            <input type={"text"} placeholder="User Name" ref={username} className={monst.className}/>
+            <input type={"password"} placeholder="Password" ref={password} className={monst.className}></input>
+            <button onClick={handleLogin} className={monst.className}>login{showSpinner ?? <Spinner/>}</button>
+            <h3 className="form-error">{error}</h3>
+            </div>
             </div>
             : <AdminDashboard isLoggin={isLoggin}/>}
         </div>

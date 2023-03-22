@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import { getData } from "@/api/s3bucketGetPut";
 import ListingComponent from "./ListingComponent";
+import Spinner from "./Spinner";
 
 const monst = Montserrat({
     subsets : [],
@@ -22,10 +23,9 @@ export default function ListingPage(){
                 <h1 className={monst.className}>Listing Page</h1>
             </div>
             <div className="listing-card-component" >
-                {listedJobsObj ? listedJobsObj.data.map((jobObj)=>{
+                {listedJobsObj ? listedJobsObj.data.length > 0 ?  listedJobsObj.data.reverse().map((jobObj)=>{
                     return(< ListingComponent jobObj = {jobObj} />)
-                }) : <h2>Loading</h2>}
-                
+                }) : <Spinner /> : <h1 className={monst.className}>nothing to show here !</h1>}
             </div>
         </div>
     )

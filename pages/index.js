@@ -9,6 +9,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 
 
+
 export const listedJobsContext = createContext();
 export default function Index(){
   
