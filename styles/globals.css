@@ -36,7 +36,7 @@
 
 .heroSection{
   transition: 250ms;
-  background-image: url('../public/heroimage.jpg');
+  background-image: url('/heroimage.jpg');
 }
 
 .hero-section-cont{
