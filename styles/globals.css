@@ -5,22 +5,20 @@
 }
 
 .main-header{
-  position: sticky;
+  transition: 250ms;
+  position: fixed;
+  opacity: 0.7;
+  box-shadow: 1px 1px 10px;
+  width: 100%;
   z-index: 9999;
   top: 0;
 }
 .header{
   width: 100%;
   padding: 15px 0;
-  background-color: whitesmoke;
   display: flex;
   align-items: center;
   justify-content: space-around;
-
-}
-
-.header-logo{
-
 }
 
 .header-links
@@ -32,14 +30,19 @@
 .header-links h2{
   cursor: pointer;
 }
+.header-links h2:hover{
+
+}
 
 
 .heroSection{
   transition: 250ms;
-  background-image: url('/heroimage.jpg');
+  background-size: cover;
 }
 
 .hero-section-cont{
+  background: url('/herosection.jpg');
+  background-size: cover;
   height: 100vh;
   display: flex;
   align-items: center;

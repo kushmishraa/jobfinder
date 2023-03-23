@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {Montserrat} from 'next/font/google'
 
 const mont = Montserrat({
@@ -9,9 +9,9 @@ const mont = Montserrat({
 
 const headerLinks = ["Listing" , "About us" , "Contact"]
 
-
 export default function Header(props){
     const{scrollToListing , isAdmin , addListing , home} = props;
+    const headerRef = useRef();
 
     const handleClick = (e) =>{
         switch(headerLinks.indexOf(event.target.innerText)){
@@ -21,9 +21,10 @@ export default function Header(props){
             }
         }
     }
+
     return(
         <div className="header-container">
-        <div className="header">
+        <div className="header" ref={headerRef}>
             <div className="header-logo">
                 <h1 className={mont.className}>JOBFINDER</h1>
             </div>

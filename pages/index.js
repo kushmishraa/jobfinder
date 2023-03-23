@@ -16,6 +16,7 @@ export default function Index(){
   const initialState = {};
 
   const [listedJobsState , dispatcher] = useReducer(reducer , initialState);
+  const mainHeaderRef = useRef();
 
   const listedjobobj = {
     listedJobsState : listedJobsState,
@@ -37,10 +38,13 @@ const adsenseRef = useRef();
   const handleAdClose = () =>{
     adsenseRef.current.style.display = 'none';
   }
+  const handleHeader = (e) =>{
+    e._reactName == "onMouseEnter" ? mainHeaderRef.current.style.opacity=1 : mainHeaderRef.current.style.opacity=0.7;
+  }
   return(
     <listedJobsContext.Provider value={listedjobobj}>
     <div className="main-container">
-        <div className="main-header">
+        <div className="main-header" ref={mainHeaderRef} onMouseEnter={handleHeader} onMouseLeave={handleHeader}>
         <Header scrollToListing={scrollToListing} />
         </div>
       

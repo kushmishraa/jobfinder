@@ -69,9 +69,6 @@ export default function AdminDashboard(props){
 
     return(
         <>
-       
-        
-
         <div className="admin-dashboard-container" ref={adminDashboardContainerRef}>
         <div className="admin-dashboard-header">
             <div className="main-header">
