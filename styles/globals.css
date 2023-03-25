@@ -483,11 +483,23 @@ outline: none;
 } 
 
 /* responsiveness */
-@media only screen and (max-width : 426px){
+@media only screen and (max-width : 660px){
   .main-header{
     font-size: 13px;
   }
 
+  .header-links{
+    display: none;
+  }
+  .hero-section-video-container{
+    background-position: right;
+  }
+}
+@media only screen and (max-width : 321px){
+ 
+  .hero-section-heading{
+    font-size: 14px;
+  }
   .header-links{
     display: none;
   }

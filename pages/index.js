@@ -47,6 +47,7 @@ const adsenseRef = useRef();
         <div className="main-header" ref={mainHeaderRef} onMouseEnter={handleHeader} onMouseLeave={handleHeader}>
         <Header scrollToListing={scrollToListing} />
         </div>
+        <Head><meta name="viewport" content="width=device-width, initial-scale=1" /></Head>
       
       {/* <div className="googleAdsense-script" ref={adsenseRef}>
       <h2 className="close-googleadsense" onClick={handleAdClose}>x</h2>
