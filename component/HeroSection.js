@@ -26,6 +26,11 @@ export default function HeroSection(props){
     return(
         <>
         <div className="heroSection">
+            <div className="hero-section-video-container">
+            {/* <video autoplay muted loop autoPlay>
+                <source src="/herosectionvideo.mp4" type="video/mp4" />
+            </video> */}
+            </div>
            <div className="hero-section-cont">
                 <div className="hero-section-heading" ref={heroSectionHeadingRef}>
                     <h1 className={mont.className}>Looking to start your carrer ?</h1>

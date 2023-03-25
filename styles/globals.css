@@ -7,11 +7,24 @@
 .main-header{
   transition: 250ms;
   position: fixed;
-  opacity: 0.7;
-  box-shadow: 1px 1px 10px;
+  background-color: black;
+  color: whitesmoke;
+  box-shadow:
+  1px 2.2px 0.8px -20px rgba(0, 0, 0, 0.065),
+  2.1px 4.4px 1.7px -20px rgba(0, 0, 0, 0.096),
+  3.2px 6.7px 2.9px -20px rgba(0, 0, 0, 0.119),
+  4.4px 9.1px 4.3px -20px rgba(0, 0, 0, 0.138),
+  5.6px 11.8px 6.3px -20px rgba(0, 0, 0, 0.155),
+  7.1px 14.9px 8.9px -20px rgba(0, 0, 0, 0.172),
+  9.1px 19px 12.6px -20px rgba(0, 0, 0, 0.191),
+  12px 25.1px 18.3px -20px rgba(0, 0, 0, 0.214),
+  17.6px 36.8px 28.1px -20px rgba(0, 0, 0, 0.245),
+  33px 69px 50px -20px rgba(0, 0, 0, 0.31);
+  opacity: 0.8;
   width: 100%;
   z-index: 9999;
   top: 0;
+ 
 }
 .header{
   width: 100%;
@@ -20,7 +33,32 @@
   align-items: center;
   justify-content: space-around;
 }
+.header-logo h1{
+  /* background: rgb(210,209,232); */
+  /* background: linear-gradient(90deg, rgba(210,209,232,1) 2%, rgba(121,9,102,1) 34%, rgba(0,212,255,1) 73%); */
+  /* background: linear-gradient(90deg, rgba(47,45,110,1) 1%, rgba(193,9,148,1) 43%, rgba(0,212,255,1) 96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 15s ease infinite; */
+  background: linear-gradient(-45deg, rgba(47,45,110,1) 1%, rgba(193,9,148,1) 43%, rgba(0,212,255,1) 96%);
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+	background-size: 400% 400%;
+	animation: gradient 7s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 .header-links
 {
   gap: 50px;
@@ -30,26 +68,51 @@
 .header-links h2{
   cursor: pointer;
 }
-.header-links h2:hover{
+.header-links h2::before{
+  content: "";
+  background-color: black;
+  display: flex;
+  position: relative;
+  height: 2px;
+  top: 35px;
+  transform: scaleX(0);
+  transition: 100ms;
 
 }
 
 
 .heroSection{
+  position: relative;
   transition: 250ms;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.hero-section-video-container{
+  background-image: url('/herosectionimage.jpg');
+  filter: brightness(35%);
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
   background-size: cover;
 }
 
 .hero-section-cont{
+/* 
   background: url('/herosection.jpg');
-  background-size: cover;
+  background-size: cover; */
+  z-index: 1;
+  position: relative;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .hero-section-heading{
+  color: white;
   width: 50%;
   height: 50%;
   display: flex;
@@ -60,18 +123,20 @@
 }
 
 .hero-section-button-cont button{
+  color: white;
   padding: 20px 40px;
-  background-color: whitesmoke;
-  border: none;
+  background: transparent;
+  border: 1px solid white;
+  
   cursor: pointer;
 }
 .hero-section-button-cont::before{
   content: "";
-  background-color: black;
+  background-color: white;
   display: flex;
   position: relative;
   height: 3px;
-  top: 70px;
+  top: 80px;
   transform: scaleX(0);
   transition: 100ms; 
 }
@@ -84,15 +149,40 @@
 .main-listing-Section{
   height: 100vh;
 }
+.listing-card-component-container{
+  height: 100%;
+  overflow: scroll;
+}
+.listing-card-component-container::-webkit-scrollbar{
+  display: none;
+}
 
 .listing-heading{
   text-align: center;
 }
 
+.listing-filter{
+  margin: 38px auto;
+  max-width: 100%;
+}
+
+.listing-filter select{
+  max-width: 100%;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+.select-options{
+   border-bottom: 1px solid black;
+   font-weight: 800;
+  }
+
 .listing-cont{
   display: flex;
   flex-direction: column;
   margin-top: 5%;
+  height: 100%;
 }
 
 .listing-card-component{
@@ -106,7 +196,7 @@ justify-content: center;
   transition: 250ms;
   opacity: 0.7;
   filter: blur(1px);
-  box-shadow: 1px 1px 5px;
+  box-shadow: 1px 1px 5px ;
   flex : 0 0 350px;
   margin-left: 2%;
   margin-top: 50px;
@@ -118,6 +208,7 @@ justify-content: center;
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
+  /* background-color: white; */
 }
 .listing-card-info h2:nth-child(1){
   font-weight: bolder;
@@ -130,14 +221,13 @@ justify-content: center;
   flex-direction: column;
   gap: 5px;
   text-align:left;
-
-
 }
 
 .listing-card:hover{
+
+  box-shadow: 1px 2px 8px ;
   opacity: 1;
   filter: blur(0px);
-  box-shadow: 1px 2px 8px ;
 }
 
 .listing-card-r1{

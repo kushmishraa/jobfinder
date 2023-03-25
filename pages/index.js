@@ -39,7 +39,7 @@ const adsenseRef = useRef();
     adsenseRef.current.style.display = 'none';
   }
   const handleHeader = (e) =>{
-    e._reactName == "onMouseEnter" ? mainHeaderRef.current.style.opacity=1 : mainHeaderRef.current.style.opacity=0.7;
+    //e._reactName == "onMouseEnter" ? mainHeaderRef.current.style.opacity=1 : mainHeaderRef.current.style.opacity=0.7;
   }
   return(
     <listedJobsContext.Provider value={listedjobobj}>
