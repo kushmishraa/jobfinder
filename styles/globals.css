@@ -120,6 +120,7 @@
   justify-content: center;
   flex-direction: column;
   gap: 10px;
+  text-align: center;
 }
 
 .hero-section-button-cont button{
@@ -480,3 +481,14 @@ outline: none;
     transform: rotate(360deg);
   }
 } 
+
+/* responsiveness */
+@media only screen and (max-width : 426px){
+  .main-header{
+    font-size: 13px;
+  }
+
+  .header-links{
+    display: none;
+  }
+}
