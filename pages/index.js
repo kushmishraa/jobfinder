@@ -48,7 +48,7 @@ const adsenseRef = useRef();
         <Header scrollToListing={scrollToListing} />
         </div>
       
-      <div className="googleAdsense-script" ref={adsenseRef}>
+      {/* <div className="googleAdsense-script" ref={adsenseRef}>
       <h2 className="close-googleadsense" onClick={handleAdClose}>x</h2>
       <Head>
       <title>jobFinder</title>
@@ -65,7 +65,7 @@ const adsenseRef = useRef();
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
      </div>
-      </div>
+      </div> */}
 
         <div className="main-heroSection">
         <HeroSection scrollToListing={scrollToListing}/>
