@@ -20,7 +20,7 @@
   12px 25.1px 18.3px -20px rgba(0, 0, 0, 0.214),
   17.6px 36.8px 28.1px -20px rgba(0, 0, 0, 0.245),
   33px 69px 50px -20px rgba(0, 0, 0, 0.31);
-  opacity: 0.8;
+  opacity: 0.89;
   width: 100%;
   z-index: 9999;
   top: 0;
@@ -157,6 +157,10 @@
 .listing-card-component-container::-webkit-scrollbar{
   display: none;
 }
+.listing-header-container{
+  display: flex;
+  flex-direction: column;
+}
 
 .listing-heading{
   text-align: center;
@@ -165,10 +169,12 @@
 .listing-filter{
   margin: 38px auto;
   max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .listing-filter select{
-  max-width: 100%;
+  max-width: 77%;
   padding: 12px 20px;
   border-radius: 12px;
   font-family: 'Montserrat', sans-serif;
@@ -473,6 +479,58 @@ outline: none;
   animation: spin 1s linear infinite;
 }
 
+.main-footer-section{
+  margin-top: 2%;
+  background-color: black;
+  width: 100%;
+  height: 18vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer-container{
+  display: flex;
+  color: white;
+  font-family: 'Montserrat' , sans-serif;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.footer-heading
+{
+  font-family: 'Montserrat', sans-serif;;
+  color: white;
+}
+.footer-heading h1{
+  background: linear-gradient(-45deg, rgba(47,45,110,1) 1%, rgba(193,9,148,1) 43%, rgba(0,212,255,1) 96%);
+	background-size: 400% 400%;
+	animation: gradient 7s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.action-logo{
+  width:90px;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.logo-container svg{
+  width: 20px;
+  transition: 350ms;
+}
+.action-logo:hover .logo-container svg{
+  width: 40px;
+  transform: rotate(360deg);
+}
+
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -493,6 +551,10 @@ outline: none;
   }
   .hero-section-video-container{
     background-position: right;
+  }
+  .footer-container{
+    height: max-content;
+    flex-direction: column;
   }
 }
 @media only screen and (max-width : 321px){

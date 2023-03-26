@@ -7,6 +7,7 @@ import ListingPage from "@/component/ListingPage";
 import Script from "next/script";
 import Head from "next/head";
 import { useEffect } from "react";
+import Footer from "@/component/Footer";
 
 
 
@@ -33,6 +34,16 @@ const adsenseRef = useRef();
   useEffect(() => {
     window.adsbygoogle = window.adsbygoogle || []
     window.adsbygoogle.push({})
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        mainHeaderRef.current.style.top = "0";
+      } else {
+        mainHeaderRef.current.style.top = "-100px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
   })
 
   const handleAdClose = () =>{
@@ -41,13 +52,18 @@ const adsenseRef = useRef();
   const handleHeader = (e) =>{
     //e._reactName == "onMouseEnter" ? mainHeaderRef.current.style.opacity=1 : mainHeaderRef.current.style.opacity=0.7;
   }
+
+ 
   return(
     <listedJobsContext.Provider value={listedjobobj}>
     <div className="main-container">
         <div className="main-header" ref={mainHeaderRef} onMouseEnter={handleHeader} onMouseLeave={handleHeader}>
         <Header scrollToListing={scrollToListing} />
         </div>
-        <Head><meta name="viewport" content="width=device-width, initial-scale=1" /></Head>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>jobFinder-Home</title>
+        </Head>
       
       {/* <div className="googleAdsense-script" ref={adsenseRef}>
       <h2 className="close-googleadsense" onClick={handleAdClose}>x</h2>
@@ -74,6 +90,10 @@ const adsenseRef = useRef();
 
         <div className="main-listing-Section" ref={listingRef}>
           <ListingPage />
+        </div>
+
+        <div className="main-footer-section">
+          <Footer />
         </div>
 
     </div>

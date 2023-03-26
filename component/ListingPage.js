@@ -63,17 +63,21 @@ export default function ListingPage(){
     
     return(
         <div className="listing-cont">
+            <div className="listing-header-container">
+
             <div className="listing-heading">
                 <h1 className={monst.className}>Listing Page</h1>
             </div>
             <div className="listing-filter">
                 {findingTypesOfJobs()}
                 <select value={filteredJob.currSelectedJob} onChange={changeListing}>
+                <option value="" disabled selected>Select your job type</option>
                     <option value="none" className="select-options">None</option>
                     {filteredJobsListing ?  filteredJobsListing.map((availableJobs)=>{
                         return <option value={availableJobs} className="select-options">{availableJobs}</option>
                     }) : null }
                 </select>
+            </div>
             </div>
             <div className="listing-card-component-container">
 
