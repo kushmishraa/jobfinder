@@ -70,8 +70,8 @@ export default function ListingPage(){
             </div>
             <div className="listing-filter">
                 {findingTypesOfJobs()}
-                <select value={filteredJob.currSelectedJob} onChange={changeListing}>
-                <option value="" disabled selected>Select your job type</option>
+                <select value={filteredJob.currSelectedJob}  onChange={changeListing}>
+                <option value="select your job role" hidden disabled selected >Select your job type</option>
                     <option value="none" className="select-options">None</option>
                     {filteredJobsListing ?  filteredJobsListing.map((availableJobs)=>{
                         return <option value={availableJobs} className="select-options">{availableJobs}</option>

@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import {Montserrat} from 'next/font/google'
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const mont = Montserrat({
     variable : "header-logo-font",
@@ -7,17 +9,22 @@ const mont = Montserrat({
     subsets:[],
 })
 
-const headerLinks = ["Listing" , "About us" , "Contact"]
+const headerLinks = ["Listing" , "Contact"]
 
 export default function Header(props){
+    
     const{scrollToListing , isAdmin , addListing , home} = props;
     const headerRef = useRef();
 
     const handleClick = (e) =>{
+        console.log(e);
         switch(headerLinks.indexOf(event.target.innerText)){
             case 0 :{
                 scrollToListing();
                 break;
+            }
+            case 1:{
+                window.location.href = "/contact"
             }
         }
     }
