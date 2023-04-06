@@ -21,7 +21,8 @@ export default function Header(props){
                 gtag.event({
                     action: 'click',
                     category: 'Contact',
-                    label: 'none'
+                    label: 'none',
+                    value : 'contact button clicked'
                   })
             }
         }
