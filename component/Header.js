@@ -1,13 +1,6 @@
 import React, { useRef } from "react";
-import {Montserrat} from 'next/font/google'
-import * as gtag from '../pages/utilfunction';
+import * as gtag from './utilfunction';
 
-
-const mont = Montserrat({
-    variable : "header-logo-font",
-    weight : '400',
-    subsets:[],
-})
 
 const headerLinks = ["Listing" , "Contact"]
 
@@ -38,16 +31,16 @@ export default function Header(props){
         <div className="header-container">
         <div className="header" ref={headerRef}>
             <div className="header-logo">
-                <h1 className={mont.className}>JOBFINDER</h1>
+                <h1>JOBFINDER</h1>
             </div>
             <div className="header-links">
                 {isAdmin ? 
                 <>
-                <h2 className={mont.className} onClick={handleClick}>{addListing}</h2>
-                <h2 className={mont.className} onClick={handleClick}>{home}</h2>
+                <h2  onClick={handleClick}>{addListing}</h2>
+                <h2  onClick={handleClick}>{home}</h2>
                 </>:
             headerLinks.map((headerLinks)=>{
-                return <h2 key={headerLinks} className={mont.className} onClick={handleClick}>{headerLinks}</h2>
+                return <h2 key={headerLinks} onClick={handleClick}>{headerLinks}</h2>
             })}
             </div>
         </div>

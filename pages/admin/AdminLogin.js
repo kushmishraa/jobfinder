@@ -1,12 +1,7 @@
 import { reducer } from "@/reducer/appReducer";
 import React, { createContext, use, useContext, useReducer, useRef, useState } from "react";
 import AdminDashboard from "./adminDashboard/AdminDashborad";
-import { Montserrat } from "next/font/google";
 import Spinner from "@/component/Spinner";
-const monst = Montserrat({
-    variable : "monst",
-    subsets:[],
-})
 export const adminContext = createContext();
 
 export default function AdminLogin(){
@@ -51,9 +46,9 @@ export default function AdminLogin(){
             {!isLoggin ?
             <div className="admin-login-form">
             <div className="admin-login-input">
-            <input type={"text"} placeholder="User Name" ref={username} className={monst.className}/>
-            <input type={"password"} placeholder="Password" ref={password} className={monst.className}></input>
-            <button onClick={handleLogin} className={monst.className}>login{showSpinner ?? <Spinner/>}</button>
+            <input type={"text"} placeholder="User Name" ref={username} />
+            <input type={"password"} placeholder="Password" ref={password} ></input>
+            <button onClick={handleLogin}>login{showSpinner ?? <Spinner/>}</button>
             <h3 className="form-error">{error}</h3>
             </div>
             </div>

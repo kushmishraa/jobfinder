@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { event } from './utilfunction'
+import { event } from '../component/utilfunction'
 
 export default function Document() {
   return (

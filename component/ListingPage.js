@@ -1,16 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Montserrat } from "next/font/google";
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import { getData } from "@/api/s3bucketGetPut";
 import ListingComponent from "./ListingComponent";
 import Spinner from "./Spinner";
-
-const monst = Montserrat({
-    subsets : [],
-    weight: '300'
-})
-
-
 
 export default function ListingPage(){
     const [listedJobsObj , setListedJobs] = useState();
@@ -57,8 +48,8 @@ export default function ListingPage(){
         })
     }
 
-    const showListing = (jobObj) =>{
-        return <ListingComponent jobObj = {jobObj} />
+    const showListing = (jobObj , index) =>{
+        return <ListingComponent jobObj = {jobObj} key={index}/>
     } 
     
     return(
@@ -66,7 +57,7 @@ export default function ListingPage(){
             <div className="listing-header-container">
 
             <div className="listing-heading">
-                <h1 className={monst.className}>Listing Page</h1>
+                <h1 >Listing Page</h1>
             </div>
             <div className="listing-filter">
                 {findingTypesOfJobs()}
@@ -74,7 +65,7 @@ export default function ListingPage(){
                 <option value="select your job role" hidden disabled selected >Select your job type</option>
                     <option value="none" className="select-options">None</option>
                     {filteredJobsListing ?  filteredJobsListing.map((availableJobs)=>{
-                        return <option value={availableJobs} className="select-options">{availableJobs}</option>
+                        return <option value={availableJobs} className="select-options" key={availableJobs}>{availableJobs}</option>
                     }) : null }
                 </select>
             </div>
@@ -84,9 +75,9 @@ export default function ListingPage(){
             <div className="listing-card-component" >
                 {   filteredJob.currSelectedJob ? filteredJob.filteredJob.reverse().map((jobObj)=>{
                     return showListing(jobObj)
-                }):  listedJobsObj ? listedJobsObj.data.length > 0 ?  listedJobsObj.data.reverse().map((jobObj)=>{
-                    return showListing(jobObj)
-                }) : <Spinner /> : <h1 className={monst.className}>nothing to show here !</h1>}
+                }):  listedJobsObj ? listedJobsObj.data.length > 0 ?  listedJobsObj.data.reverse().map((jobObj,index)=>{
+                    return showListing(jobObj,index)
+                }) : <Spinner /> : <h1>nothing to show here !</h1>}
             </div>
             </div>
         </div>
