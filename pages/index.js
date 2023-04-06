@@ -4,7 +4,6 @@ import Header from "@/component/Header";
 import { reducer } from "@/reducer/appReducer";
 import HeroSection from "@/component/HeroSection";
 import ListingPage from "@/component/ListingPage";
-import Script from "next/script";
 import Head from "next/head";
 import { useEffect } from "react";
 import Footer from "@/component/Footer";
@@ -32,6 +31,7 @@ export default function Index(){
 const adsenseRef = useRef();
 
   useEffect(() => {
+
     window.adsbygoogle = window.adsbygoogle || []
     window.adsbygoogle.push({})
     var prevScrollpos = window.pageYOffset;
@@ -55,15 +55,18 @@ const adsenseRef = useRef();
 
  
   return(
+    
     <listedJobsContext.Provider value={listedjobobj}>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>Jobs for freshers</title>
+        
+        </Head>
+   
     <div className="main-container">
         <div className="main-header" ref={mainHeaderRef} onMouseEnter={handleHeader} onMouseLeave={handleHeader}>
         <Header scrollToListing={scrollToListing} />
         </div>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>jobFinder-Home</title>
-        </Head>
       
       {/* <div className="googleAdsense-script" ref={adsenseRef}>
       <h2 className="close-googleadsense" onClick={handleAdClose}>x</h2>

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import {Montserrat} from 'next/font/google'
-import Link from "next/link";
-import { useRouter } from "next/router";
+import * as gtag from '../pages/utilfunction';
+
 
 const mont = Montserrat({
     variable : "header-logo-font",
@@ -24,7 +24,12 @@ export default function Header(props){
                 break;
             }
             case 1:{
-                window.location.href = "/contact"
+                // window.location.href = "/contact";
+                gtag.event({
+                    action: 'click',
+                    category: 'Contact',
+                    label: 'none'
+                  })
             }
         }
     }
