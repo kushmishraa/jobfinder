@@ -2,7 +2,6 @@ import React, { createContext, useContext, useRef } from "react";
 import { useReducer } from "react";
 import Header from "@/component/Header";
 import { reducer } from "@/reducer/appReducer";
-// import HeroSection from "@/component/HeroSection";
 import ListingPage from "@/component/ListingPage";
 import Head from "next/head";
 import { useEffect } from "react";
