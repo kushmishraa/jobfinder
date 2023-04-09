@@ -60,6 +60,8 @@ const adsenseRef = useRef();
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>Jobs for freshers</title>
           <meta name="description" content="Discover top fresher job opportunities! Apply for internships, part-time or full-time jobs across multiple industries on Freshers Job Founder now!"></meta>
+          <meta name="keywords" content="Jobs for fresher"></meta>
+          <meta name="keywords" content="software engineers freshers job"></meta>
         </Head>
    
     <div className="main-container">
