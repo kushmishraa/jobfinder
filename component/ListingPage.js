@@ -77,7 +77,7 @@ export default function ListingPage(){
                     return showListing(jobObj)
                 }):  listedJobsObj ? listedJobsObj.data.length > 0 ?  listedJobsObj.data.reverse().map((jobObj,index)=>{
                     return showListing(jobObj,index)
-                }) : <Spinner /> : <h1>nothing to show here !</h1>}
+                }) : <Spinner /> : <h2>nothing to show here !</h2>}
             </div>
             </div>
         </div>
