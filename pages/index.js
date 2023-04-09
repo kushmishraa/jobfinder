@@ -2,13 +2,16 @@ import React, { createContext, useContext, useRef } from "react";
 import { useReducer } from "react";
 import Header from "@/component/Header";
 import { reducer } from "@/reducer/appReducer";
-import HeroSection from "@/component/HeroSection";
+// import HeroSection from "@/component/HeroSection";
 import ListingPage from "@/component/ListingPage";
 import Head from "next/head";
 import { useEffect } from "react";
 import Footer from "@/component/Footer";
+import dynamic from "next/dynamic";
 
-
+const HeroSection = dynamic(()=>import('../component/HeroSection'),{
+  loading : ()=><p>loading...</p>,
+})
 
 export const listedJobsContext = createContext();
 export default function Index(){
@@ -62,6 +65,7 @@ const adsenseRef = useRef();
           <meta name="description" content="Discover top fresher job opportunities! Apply for internships, part-time or full-time jobs across multiple industries on Freshers Job Founder now!"></meta>
           <meta name="keywords" content="Jobs for fresher"></meta>
           <meta name="keywords" content="software engineers freshers job"></meta>
+          <link rel="canonical" href="https://directjobfinder.vercel.app/"></link>
         </Head>
    
     <div className="main-container">
