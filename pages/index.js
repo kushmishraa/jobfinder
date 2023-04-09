@@ -66,73 +66,7 @@ const adsenseRef = useRef();
           <meta name="keywords" content="software engineers freshers job"></meta>
           <meta name="google-site-verification" content="KWZDsjM053jmnKaTBy1LB9aNkulGkLR0dQzs3tSpIlM" />
           <link rel="canonical" href="https://directjobfinder.vercel.app/"></link>
-          <script type="application/ld+json">
-            {[
-              {
-                "@context": "http://schema.org",
-                "@type": "JobPosting",
-                "title": "JOBFINDER"
-              },
-              {
-                "@context": "http://schema.org",
-                "@type": "JobPosting",
-                "title": "Looking to start your carrer ?"
-              },
-              {
-                "@context": "http://schema.org",
-                "@type": "JobPosting",
-                "title": "view Listings"
-              },
-              {
-                "@context": "http://schema.org",
-                "@type": "JobPosting",
-                "title": "Listing Page",
-                "hiringOrganization": "logo",
-                "jobLocation": {
-                  "@type": "Place",
-                  "address": "Location : PUNE, INDIA"
-                },
-                "baseSalary": {
-                  "@type": "MonetaryAmount",
-                  "value": "Salary : 4 -9 LPA"
-                },
-                "employmentType": "Software Engineer",
-                "validThrough": "Please insert valid ISO 8601 date/time here. Examples: 2015-07-27 or 2015-07-27T15:30"
-              },
-              {
-                "@context": "http://schema.org",
-                "@type": "JobPosting",
-                "title": "Listing Page",
-                "hiringOrganization": "logo",
-                "jobLocation": {
-                  "@type": "Place",
-                  "address": "Location : Banglore, India"
-                },
-                "baseSalary": {
-                  "@type": "MonetaryAmount",
-                  "value": "Salary : unknown"
-                },
-                "employmentType": "Software Engineer",
-                "validThrough": "Please insert valid ISO 8601 date/time here. Examples: 2015-07-27 or 2015-07-27T15:30"
-              },
-              {
-                "@context": "http://schema.org",
-                "@type": "JobPosting",
-                "title": "Listing Page",
-                "hiringOrganization": "logo",
-                "jobLocation": {
-                  "@type": "Place",
-                  "address": "Location : Nissan Digital Hub, Trivandrum, IN"
-                },
-                "baseSalary": {
-                  "@type": "MonetaryAmount",
-                  "value": "Salary : 4 -9 LPA"
-                },
-                "employmentType": "Software Engineer",
-                "validThrough": "Please insert valid ISO 8601 date/time here. Examples: 2015-07-27 or 2015-07-27T15:30"
-              }
-            ]}
-            </script>
+          <script type="application/ld+json" src="/sample.json" />
         </Head>
    
     <div className="main-container">

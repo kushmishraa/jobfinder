@@ -4,7 +4,7 @@ import { event } from '../component/utilfunction'
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
+     <Head />
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8XKZKXB6S"></script>
       <script
         dangerouslySetInnerHTML={{
