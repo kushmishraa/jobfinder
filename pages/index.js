@@ -59,13 +59,13 @@ const adsenseRef = useRef();
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>Jobs for freshers</title>
-        
+          <meta name="description" content="Discover top fresher job opportunities! Apply for internships, part-time or full-time jobs across multiple industries on Freshers Job Founder now!"></meta>
         </Head>
    
     <div className="main-container">
         <div className="main-header" ref={mainHeaderRef} onMouseEnter={handleHeader} onMouseLeave={handleHeader}>
         <Header scrollToListing={scrollToListing} />
-        <meta name="description" content="Discover top fresher job opportunities! Apply for internships, part-time or full-time jobs across multiple industries on Freshers Job Founder now!"></meta>
+        
         </div>
       
       {/* <div className="googleAdsense-script" ref={adsenseRef}>
