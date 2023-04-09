@@ -66,7 +66,7 @@ const adsenseRef = useRef();
           <meta name="keywords" content="software engineers freshers job"></meta>
           <meta name="google-site-verification" content="KWZDsjM053jmnKaTBy1LB9aNkulGkLR0dQzs3tSpIlM" />
           <link rel="canonical" href="https://directjobfinder.vercel.app/"></link>
-          <script type="application/ld+json" src="/sample.json" />
+          <script type="application/ld+json" src="/sample.json" async />
         </Head>
    
     <div className="main-container">
