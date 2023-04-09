@@ -61,7 +61,8 @@ const adsenseRef = useRef();
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>Discover Exciting Job Opportunities - Freshers | Apply Now!</title>
-          <meta name="description" content="Discover top fresher job opportunities! Apply for internships, part-time or full-time jobs across multiple industries on Freshers Job Founder now!"></meta>
+          <meta name="og:title" content="Discover Exciting Job Opportunities - Freshers | Apply Now!"></meta>
+          <meta name="og:description" content="Discover top fresher job opportunities! Apply for internships, part-time or full-time jobs across multiple industries on Freshers Job Founder now!"></meta>
           <meta name="keywords" content="Jobs for fresher"></meta>
           <meta name="keywords" content="software engineers freshers job"></meta>
           <meta name="google-site-verification" content="KWZDsjM053jmnKaTBy1LB9aNkulGkLR0dQzs3tSpIlM" />
