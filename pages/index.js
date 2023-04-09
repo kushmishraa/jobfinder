@@ -31,7 +31,6 @@ export default function Index(){
 const adsenseRef = useRef();
 
   useEffect(() => {
-
     window.adsbygoogle = window.adsbygoogle || []
     window.adsbygoogle.push({})
     var prevScrollpos = window.pageYOffset;

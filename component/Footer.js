@@ -5,8 +5,9 @@ export default function Footer(){
     return(
         <div className="footer-container">
             <div className="footer-heading">
-                <h1>JOBFINDER</h1>
+                <h2>JOBFINDER</h2>
             </div>
+            <a href="https://chat.whatsapp.com/I6BdVkL2OJI2h1vc7OTgLU" target={'_blank'}>
             <div className="action-logo">
                 <div className="logo-container">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -17,9 +18,10 @@ export default function Footer(){
                     </svg>
                 </div>
                 <div className="invite-logo">
-                join on Telegram 
+                    join on whatsapp 
                 </div>
             </div>
+            </a>
             <div className="action-logo">
                 <div className="logo-container">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"

@@ -32,14 +32,14 @@ export default function ListingComponent(props){
              height={0}
              alt={"logo"}
             />
+        </div> 
         </div>
         <div className="listing-card-info">
         <h2 >{jobObj.position}</h2>
         <h2 >Location : {jobObj.location}</h2>
         <h2 >Salary : {jobObj.salary}</h2>
-        <h2 >Experince Required : {jobObj.experience} years</h2>
-        </div>  
-        </div>
+        <h2 >Experince : {jobObj.experience}</h2>
+        </div> 
         <div className="listing-card-button">
             {!isLoggin ?
         <button onClick={()=>{window.open(jobObj.link , "_self")}}><h2>Apply Now  !</h2></button>

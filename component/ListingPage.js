@@ -57,7 +57,7 @@ export default function ListingPage(){
             <div className="listing-header-container">
 
             <div className="listing-heading">
-                <h1 >Listing Page</h1>
+                <h2>Listing Page</h2>
             </div>
             <div className="listing-filter">
                 {findingTypesOfJobs()}
