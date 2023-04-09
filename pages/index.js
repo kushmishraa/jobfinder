@@ -64,7 +64,9 @@ const adsenseRef = useRef();
           <meta name="description" content="Discover top fresher job opportunities! Apply for internships, part-time or full-time jobs across multiple industries on Freshers Job Founder now!"></meta>
           <meta name="keywords" content="Jobs for fresher"></meta>
           <meta name="keywords" content="software engineers freshers job"></meta>
+          <meta name="google-site-verification" content="KWZDsjM053jmnKaTBy1LB9aNkulGkLR0dQzs3tSpIlM" />
           <link rel="canonical" href="https://directjobfinder.vercel.app/"></link>
+
         </Head>
    
     <div className="main-container">
