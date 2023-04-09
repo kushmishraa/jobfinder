@@ -1,0 +1,4 @@
+User-agent : *
+Allow : /
+Disallow : /admin
+sitemap : https://directjobfinder.vercel.app/sitemap.xml
