@@ -50,14 +50,9 @@ const adsenseRef = useRef();
   const handleAdClose = () =>{
     adsenseRef.current.style.display = 'none';
   }
-  const handleHeader = (e) =>{
-    //e._reactName == "onMouseEnter" ? mainHeaderRef.current.style.opacity=1 : mainHeaderRef.current.style.opacity=0.7;
-  }
 
- 
   return(
-    
-    <listedJobsContext.Provider value={listedjobobj}>
+      <listedJobsContext.Provider value={listedjobobj}>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>Discover Exciting Job Opportunities - Freshers | Apply Now!</title>
@@ -76,9 +71,8 @@ const adsenseRef = useRef();
         </Head>
    
     <div className="main-container">
-        <div className="main-header" ref={mainHeaderRef} onMouseEnter={handleHeader} onMouseLeave={handleHeader}>
+        <div className="main-header" ref={mainHeaderRef}>
         <Header scrollToListing={scrollToListing} />
-        
         </div>
       
       {/* <div className="googleAdsense-script" ref={adsenseRef}>

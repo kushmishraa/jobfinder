@@ -6,6 +6,8 @@
     background-color: black;
     color: white;
     display: flex;
+    gap: 10px;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -16,6 +18,41 @@
     align-items: center;
     gap: 20px;
     
+}
+ .formContainer{
+    width: 100%;
+ }
+.form{
+    margin: 0 auto;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form input , .form textarea , .form input[type = 'submit']{
+    padding: 2% 5%;
+    color: white;
+    background-color: grey;
+    border-bottom: 2px solid white;
+}
+.form ::placeholder{
+    color: white;
+    opacity: 1;
+}
+
+.formTopRow{
+    display: flex;
+    gap: 10px;
+}
+
+.formTopRow input{
+    width: 100%;
+}
+
+.form input[type = submit]{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .gmailButton button{
@@ -54,6 +91,65 @@
 .gmailButton button:hover{
     /* border-radius: 16px; */
     box-shadow: 1px 2px 8px white;
+}
+.contactAction{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.actions{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+   
+}
+.heading{
+    margin-top : 40px
+}
+.actions img:hover{
+    cursor: pointer;
+  transition: 250ms;
+    transform: translateY(-10px);
+}
+
+@media screen and (max-width : 321px)
+{   
+   .container{
+    justify-content: space-evenly;
+   }
+
+   .actions{
+    width: 50%;
+   }
+
+   .actions img{
+    width: 50px;
+    height: 50px;
+   }
+
+    .form{
+        width:80%;
+        justify-content: center;
+    }
+    .formTopRow{
+        flex-direction: column;
+        width: 100%;
+    }
+    .form input , .form textarea{
+        padding: 3% 2%;
+        width: 100%;
+    }
+
+    .form textarea{
+        height: 100px;
+    }
+    
+    .form input[type = submit]{
+        width: 50%;
+        margin: 0% auto;
+        padding: 2% 5%;
+    }
 }
 
 @keyframes gradient {
